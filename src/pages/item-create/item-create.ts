@@ -4,7 +4,7 @@ import { NavController, ViewController } from 'ionic-angular';
 import { GpsproviderProvider } from './../../providers/gpsprovider/gpsprovider';
 
 import { Camera } from '@ionic-native/camera';
-
+import { DogReport } from '../../models/dogreport';
 
 @Component({
   selector: 'page-item-create',
@@ -20,18 +20,10 @@ export class ItemCreatePage {
   form: FormGroup;
 
   // The Dog report fields to send to the db.
-  dog_report: { name: string, about: string, stay_in_touch_phone_numer: string, stay_near_dog: boolean,
-     dog_location_latitude: number, dog_location_longitude: number, dog_picture_base64:string } = {
-    name: '',
-    about: '',
-    stay_in_touch_phone_numer: '',
-    stay_near_dog: false,
-    dog_location_latitude: 0,
-    dog_location_longitude: 0,
-    dog_picture_base64: ''
-  };
+  dog_report: DogReport;
 
-  constructor(public navCtrl: NavController, public viewCtrl: ViewController, formBuilder: FormBuilder, public camera: Camera, private gps: GpsproviderProvider) {
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController,
+     formBuilder: FormBuilder, public camera: Camera, private gps: GpsproviderProvider) {
     this.form = formBuilder.group({
       profilePic: [''],
       name: ['', Validators.required],
@@ -39,6 +31,8 @@ export class ItemCreatePage {
       stay_in_touch: [''],
       stay_near_dog_checkbox: false
     });
+    
+    this.dog_report = new DogReport();
 
     // Watch the form for changes, and
     this.form.valueChanges.subscribe((v) => {

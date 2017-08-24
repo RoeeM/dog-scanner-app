@@ -5,6 +5,7 @@ import { GpsproviderProvider } from './../../providers/gpsprovider/gpsprovider';
 
 import { Camera } from '@ionic-native/camera';
 import { DogReport } from '../../models/dogreport';
+import { SenddogreportProvider } from './../../providers/senddogreport/senddogreport';
 
 @Component({
   selector: 'page-item-create',
@@ -23,7 +24,8 @@ export class ItemCreatePage {
   dog_report: DogReport;
 
   constructor(public navCtrl: NavController, public viewCtrl: ViewController,
-     formBuilder: FormBuilder, public camera: Camera, private gps: GpsproviderProvider) {
+     formBuilder: FormBuilder, public camera: Camera,
+      private gps: GpsproviderProvider, private send_dog_report_provider: SenddogreportProvider) {
     this.form = formBuilder.group({
       profilePic: [''],
       name: ['', Validators.required],
@@ -102,7 +104,7 @@ export class ItemCreatePage {
     this.dog_report.dog_location_latitude = latitude;
     this.dog_report.dog_location_longitude = longitude;
 
-    // todo: send all the details (this.dog_report) to the db??
+    this.send_dog_report_provider.send_dog_report(this.dog_report);
     console.log(this.dog_report);
     }
 }

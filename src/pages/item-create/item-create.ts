@@ -36,7 +36,8 @@ export class ItemCreatePage {
       profilePic: [''],
       name: ['', Validators.required],
       about: [''],
-      stay_in_touch: ['']
+      stay_in_touch: [''],
+      stay_near_dog_checkbox: false
     });
 
     // Watch the form for changes, and
@@ -96,8 +97,7 @@ export class ItemCreatePage {
     this.dog_report.about = this.form.controls['about'].value;
     this.dog_report.stay_in_touch_phone_numer = this.form.controls['stay_in_touch'].value;
     this.dog_report.dog_picture_base64 = this.form.controls['profilePic'].value;
-    // todo: Need to fix the next line to send stay_near_dog_checkbox to db
-    //this.dog_report.stay_near_dog = this.form.controls['stay_near_dog_checkbox'].value
+    this.dog_report.stay_near_dog = this.form.controls['stay_near_dog_checkbox'].value
     this.gps.getGeolocation(this.send.bind(this));
 
     if (!this.form.valid) { return; }

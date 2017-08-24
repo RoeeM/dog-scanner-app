@@ -1,4 +1,3 @@
-import { GpsproviderProvider } from './../providers/gpsprovider/gpsprovider';
 import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav, Config } from 'ionic-angular';
 

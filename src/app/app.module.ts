@@ -34,6 +34,23 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+// Firebase Related
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import { Facebook } from '@ionic-native/facebook';
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyCGDDqlYe7brOhpkCIBEAgULa9YWZQRrIY",
+  authDomain: "dog-finder-33da2.firebaseapp.com",
+  databaseURL: "https://dog-finder-33da2.firebaseio.com",
+  projectId: "dog-finder-33da2",
+  storageBucket: "dog-finder-33da2.appspot.com",
+  messagingSenderId: "191173852125"
+};
+
+
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
 export function HttpLoaderFactory(http: Http) {
@@ -76,6 +93,9 @@ export function provideSettings(storage: Storage) {
   imports: [
     BrowserModule,
     HttpModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -112,9 +132,10 @@ export function provideSettings(storage: Storage) {
     GoogleMaps,
     SplashScreen,
     StatusBar,
+    Facebook,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
   ]
 })
 export class AppModule { }

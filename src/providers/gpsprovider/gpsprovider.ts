@@ -14,12 +14,12 @@ export class GpsproviderProvider {
 
   constructor(public http: Http, private geolocation: Geolocation) {  }
 
-  getGeolocation() {
+  getGeolocation(func) {
     this.geolocation.getCurrentPosition().then((resp) => {
-      console.log(resp.coords.latitude);
-      console.log(resp.coords.longitude);
+      func(resp.coords.latitude, resp.coords.longitude);
      }).catch((error) => {
        console.log('Error getting location', error);
+       func(null, null);
      });
   }
 

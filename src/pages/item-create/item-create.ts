@@ -1,6 +1,7 @@
 import { Component, ViewChild, NgModule } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { NavController, ViewController } from 'ionic-angular';
+import { GpsproviderProvider } from './../../providers/gpsprovider/gpsprovider';
 
 import { Camera } from '@ionic-native/camera';
 
@@ -19,14 +20,17 @@ export class ItemCreatePage {
   form: FormGroup;
 
   // The Dog report fields to send to the db.
-  dog_report: { name: string, about: string, stay_in_touch_phone_numer: string, stay_near_dog: boolean } = {
+  dog_report: { name: string, about: string, stay_in_touch_phone_numer: string, stay_near_dog: boolean,
+     dog_location_latitude: number, dog_location_longitude: number } = {
     name: '',
     about: '',
     stay_in_touch_phone_numer: '',
-    stay_near_dog: false
+    stay_near_dog: false,
+    dog_location_latitude: 0,
+    dog_location_longitude: 0
   };
 
-  constructor(public navCtrl: NavController, public viewCtrl: ViewController, formBuilder: FormBuilder, public camera: Camera) {
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController, formBuilder: FormBuilder, public camera: Camera, private gps: GpsproviderProvider) {
     this.form = formBuilder.group({
       profilePic: [''],
       name: ['', Validators.required],
@@ -87,14 +91,22 @@ export class ItemCreatePage {
    * back to the presenter.
    */
   done() {
-    // todo: send all the details to the db??
     this.dog_report.name = this.form.controls['name'].value
     this.dog_report.about = this.form.controls['about'].value
     this.dog_report.stay_in_touch_phone_numer = this.form.controls['stay_in_touch'].value
-    // todo: This line create error
+    // todo: Need to fix the next line to send stay_near_dog_checkbox to db
     //this.dog_report.stay_near_dog = this.form.controls['stay_near_dog_checkbox'].value 
+    this.gps.getGeolocation(this.send.bind(this));
 
     if (!this.form.valid) { return; }
     this.viewCtrl.dismiss(this.form.value);
   }
+
+  send(latitude, longitude) {
+    this.dog_report.dog_location_latitude = latitude;
+    this.dog_report.dog_location_longitude = longitude;
+
+    // todo: send all the details (this.dog_report) to the db??
+    console.log(this.dog_report);
+    }
 }

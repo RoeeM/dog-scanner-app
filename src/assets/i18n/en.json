@@ -51,14 +51,14 @@
 
   "LIST_MASTER_TITLE": "Items",
 
-  "ITEM_CREATE_TITLE": "Report a lost dog",
+  "ITEM_CREATE_TITLE": "Report About a Lost Dog",
   "ITEM_CREATE_CHOOSE_IMAGE": "Add Image",
 
-  "ITEM_NAME_PLACEHOLDER" : "Name",
-  "ITEM_ABOUT_PLACEHOLDER" : "About",
-  "DOG_REPORT_STAY_IN_TOUCH" : "Content Info",
-  "DOG_REPORT_STAY_CHECKBOX" : "Im staying",
-  "DOG_REPORT_DOG_RETURN" : "Return to owners",
+  "ITEM_NAME_PLACEHOLDER" : "Your Name",
+  "ITEM_ABOUT_PLACEHOLDER" : "Description",
+  "DOG_REPORT_STAY_IN_TOUCH" : "Contact Info",
+  "DOG_REPORT_STAY_CHECKBOX" : "I'm Staying",
+  "DOG_REPORT_DOG_RETURN" : "Returned to Owners",
   
 
   "DONE_BUTTON" : "Done",

@@ -68,13 +68,28 @@ export class User {
   }
 
   isScanner(){
-    const items = this.db.list('/users/'+ this.getId());
+    const items = this.db.list('/users/scanner/'+this.getId());
     return items[0]["isScanner"];
   }
+
   setScanner(isScanner){
-    const items = this.db.list('/users/'+ this.getId());
+    const items = this.db.list('/users/scanner/'+this.getId());
     items.remove();
-    items.push({ "isScanner" : isScanner });
+    items.push({ "isScanner" : isScanner});
   }
+
+  addPoint(num){
+    const items = this.db.list('/users/points/'+this.getId());
+    let currentPoint = this.getPoints();
+    items.remove();
+    items.push({ "points" : currentPoint + num});
     
   }
+  getPoints(){
+    const items = this.db.list('/users/points/'+this.getId());
+    if (!items) {
+      return 0;
+    }
+    return items[0]["points"];
+  }
+}

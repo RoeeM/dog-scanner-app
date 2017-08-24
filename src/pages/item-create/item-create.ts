@@ -87,7 +87,13 @@ export class ItemCreatePage {
    * back to the presenter.
    */
   done() {
-    // todo: send all the details to the db??    
+    // todo: send all the details to the db??
+    this.dog_report.name = this.form.controls['name'].value
+    this.dog_report.about = this.form.controls['about'].value
+    this.dog_report.stay_in_touch_phone_numer = this.form.controls['stay_in_touch'].value
+    // todo: This line create error
+    //this.dog_report.stay_near_dog = this.form.controls['stay_near_dog_checkbox'].value 
+
     if (!this.form.valid) { return; }
     this.viewCtrl.dismiss(this.form.value);
   }

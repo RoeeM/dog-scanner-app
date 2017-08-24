@@ -17,10 +17,7 @@ export class GpsproviderProvider {
   getGeolocation(func) {
     this.geolocation.getCurrentPosition().then((resp) => {
       func(resp.coords.latitude, resp.coords.longitude);
-     }).catch((error) => {
-       console.log('Error getting location', error);
-       func(null, null);
-     });
+     })
   }
 
   calculateETA(coords_a, coords_b) {

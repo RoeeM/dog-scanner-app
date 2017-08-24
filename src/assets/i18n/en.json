@@ -48,14 +48,23 @@
   "SIGNUP_TITLE": "Sign up",
   "SIGNUP_ERROR": "Unable to create account. Please check your account information and try again.",
   "SIGNUP_BUTTON": "Sign up",
+<<<<<<< HEAD
 
   "LIST_MASTER_TITLE": "found lost dog",
+=======
+  "LOGIN_AS_SCANNER": "Sign in as Scanner",
+  "LIST_MASTER_TITLE": "Items",
+>>>>>>> b7fcabaf058af74d5eb4bd6e6e8d90301d1501cf
 
-  "ITEM_CREATE_TITLE": "New Item",
+  "ITEM_CREATE_TITLE": "Report About a Lost Dog",
   "ITEM_CREATE_CHOOSE_IMAGE": "Add Image",
 
-  "ITEM_NAME_PLACEHOLDER" : "Name",
-  "ITEM_ABOUT_PLACEHOLDER" : "About",
+  "ITEM_NAME_PLACEHOLDER" : "Your Name",
+  "ITEM_ABOUT_PLACEHOLDER" : "Description",
+  "DOG_REPORT_STAY_IN_TOUCH" : "Contact Info",
+  "DOG_REPORT_STAY_CHECKBOX" : "I'm Staying",
+  "DOG_REPORT_DOG_RETURN" : "Returned to Owners",
+  
 
   "DONE_BUTTON" : "Done",
   "CANCEL_BUTTON" : "Cancel",

@@ -21,6 +21,7 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { Settings } from '../providers/providers';
 
 import { TranslateService } from '@ngx-translate/core'
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   template: `<ion-menu [content]="content">
@@ -52,8 +53,8 @@ export class MyApp {
     { title: 'Tabs', component: TabsPage },
     { title: 'Cards', component: CardsPage },
     { title: 'Content', component: ContentPage },
-    { title: 'Login', component: LoginPage },
-    { title: 'Signup', component: SignupPage },
+    // { title: 'Login', component: LoginPage },
+    // { title: 'Signup', component: SignupPage },
     { title: 'Map', component: MapPage },
     { title: 'Master Detail', component: ListMasterPage },
     { title: 'Menu', component: MenuPage },
@@ -61,7 +62,9 @@ export class MyApp {
     { title: 'Search', component: SearchPage }
   ]
 
-  constructor(private translate: TranslateService, private platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
+  constructor(private translate: TranslateService, private platform: Platform, settings: Settings,
+      private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen,
+        afAuth: AngularFireAuth) {
     this.initTranslate();
   }
 
@@ -94,4 +97,5 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
+  
 }

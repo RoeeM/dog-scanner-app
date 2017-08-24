@@ -42,6 +42,17 @@
       <ion-item>
         <ion-input type="text" placeholder="{{ 'ITEM_ABOUT_PLACEHOLDER' | translate }}" formControlName="about"></ion-input>
       </ion-item>
+      <ion-item>
+          <ion-input type="text" placeholder="{{ 'DOG_REPORT_STAY_IN_TOUCH' | translate }}" formControlName="stay_in_touch"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label>{{ 'DOG_REPORT_STAY_CHECKBOX' | translate }}</ion-label>
+          <ion-checkbox color="dark" checked="true" formControlName="stay_near_dog_checkbox"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+          <ion-label>{{ 'DOG_REPORT_DOG_RETURN' | translate }}</ion-label>
+          <ion-checkbox color="dark" disabled="true"></ion-checkbox>
+      </ion-item>
     </ion-list>
   </form>
 </ion-content>

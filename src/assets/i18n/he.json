@@ -39,8 +39,11 @@
 
   "LIST_MASTER_TITLE": "מצאתי כלב אבוד",
 
-  "ITEM_CREATE_TITLE": "פריט חדש",
+  "ITEM_CREATE_TITLE": "דווח על כלב אובד",
   "ITEM_CREATE_CHOOSE_IMAGE": "הוסף תמונה",
+  "DOG_REPORT_STAY_IN_TOUCH" : "שמור על קשר",
+  "DOG_REPORT_STAY_CHECKBOX" : "נשאר ליד הכלב",
+  "DOG_REPORT_DOG_RETURN" : "הכלב חזר לבעלים",
 
   "CARDS_TITLE": "חברתי",
 

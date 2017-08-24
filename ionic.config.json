@@ -2,5 +2,11 @@
   "name": "dog-scanner-app",
   "app_id": "",
   "type": "ionic-angular",
+<<<<<<< HEAD
   "integrations": {}
+=======
+  "integrations": {
+    "cordova": {}
+  }
+>>>>>>> b7fcabaf058af74d5eb4bd6e6e8d90301d1501cf
 }

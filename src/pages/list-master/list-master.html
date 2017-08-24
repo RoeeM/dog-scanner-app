@@ -1,20 +1,33 @@
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>{{ 'LIST_MASTER_TITLE' | translate }}</ion-title>
-
-    <ion-buttons end>
-      <button ion-button icon-only (click)="addItem()">
-        <ion-icon name="add"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
-
+<!-- todo: get user + points from db -->
+<ion-header style="background-color:#0054FF">
+  <div style="color:white">
+    <h2 text-center>Dog Finder</h2>
+  </div>
 </ion-header>
 
 <ion-content>
 
-  <ion-list>
+  <h2 text-center>Welcome Gal Hirshman</h2>
+  <div text-center>
+      <label>you have 10 points</label>
+      <ion-icon name="medal"></ion-icon>
+  </div>
+
+  <p>דיווח נוכחי</p>
+  <ion-buttons>
+    <a class="bbb">search for sorek</a>
+    <button class="bbb" ion-button>i am leaving</button>
+    <button class="bbb" ion-button>contact</button>
+  </ion-buttons>
+
+  <ion-row style="position:fixed; bottom:10%; right: 15%; left: 15%;">
+      <ion-col text-center>
+        <button class="dog_report" ion-button color="danger" round (click)="addItem()">{{ 'LIST_MASTER_TITLE' | translate }}</button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>
+<!--<ion-list>
     <ion-item-sliding *ngFor="let item of currentItems">
       <button ion-item (click)="openItem(item)">
         <ion-avatar item-start>
@@ -31,5 +44,4 @@
         </button>
       </ion-item-options>
     </ion-item-sliding>
-  </ion-list>
-</ion-content>
+  </ion-list>-->

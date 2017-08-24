@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, NgModule } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { NavController, ViewController } from 'ionic-angular';
 
@@ -17,6 +17,14 @@ export class ItemCreatePage {
   item: any;
 
   form: FormGroup;
+
+  // The Dog report fields to send to the db.
+  dog_report: { name: string, about: string, stay_in_touch_phone_numer: string, stay_near_dog: boolean } = {
+    name: '',
+    about: '',
+    stay_in_touch_phone_numer: '',
+    stay_near_dog: false
+  };
 
   constructor(public navCtrl: NavController, public viewCtrl: ViewController, formBuilder: FormBuilder, public camera: Camera) {
     this.form = formBuilder.group({
@@ -79,7 +87,7 @@ export class ItemCreatePage {
    * back to the presenter.
    */
   done() {
-    // todo: send all the details to the db??
+    // todo: send all the details to the db??    
     if (!this.form.valid) { return; }
     this.viewCtrl.dismiss(this.form.value);
   }

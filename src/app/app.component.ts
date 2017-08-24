@@ -106,12 +106,22 @@ export class MyApp {
      });
   }
 
-  watchGeolocation() {
+  calculateETA(coords_a, coords_b) {
+    var lat_delta = coords_a.latitude - coords_b.latitude;
+    var lng_delta = coords_a.longitude - coords_b.longitude;
+    return lat_delta * lat_delta + lng_delta * lng_delta;
+  }
+
+  watchGeolocation(coords, max_time, func) {
      let watch = this.geolocation.watchPosition();
      watch.subscribe((data) => {
       // data can be a set of coordinates, or an error (if an error occurred).
       // data.coords.latitude
       // data.coords.longitude
+      if (!(data instanceof Error))
+        if (this.calculateETA(data.coords, coords) < max_time) {
+          func();
+        }
      });
   }
 }

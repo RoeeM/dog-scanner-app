@@ -33,14 +33,17 @@ loginfacebook(isScanner)  {
     return this.fb.login(['email', 'public_profile']).then(res => {
       const facebookCredential = firebase.auth.FacebookAuthProvider.credential(res.authResponse.accessToken);
        firebase.auth().signInWithCredential(facebookCredential);
+       this.user.setScanner(isScanner);
        this.navCtrl.push(MainPage);
     }).catch(err => this.showLoginError());
   }
   else {
     return this.afAuth.auth
       .signInWithPopup(new firebase.auth.FacebookAuthProvider())
-      .then(res => this.navCtrl.push(MainPage))
-      .catch(err => this.showLoginError())
+      .then(res => {
+        this.user.setScanner(isScanner);
+        this.navCtrl.push(MainPage);
+      }).catch(err => this.showLoginError())
   }
 }
 showLoginError(){

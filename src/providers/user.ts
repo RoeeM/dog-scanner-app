@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/toPromise';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
+import { AngularFireDatabase } from 'angularfire2/database';
+
 /**
  * Most apps have the concept of a User. This is a simple provider
  * with stubs for login/signup/etc.
@@ -28,7 +27,7 @@ import * as firebase from 'firebase/app';
 export class User {
   user: Observable<firebase.User>;
 
-  constructor(public afAuth: AngularFireAuth) {
+  constructor(public afAuth: AngularFireAuth, public db: AngularFireDatabase) {
   }
 
 
@@ -68,5 +67,14 @@ export class User {
     return firebase.auth().currentUser.uid;
   }
 
-
-}
+  isScanner(){
+    const items = this.db.list('/users/'+ this.getId());
+    return items[0]["isScanner"];
+  }
+  setScanner(isScanner){
+    const items = this.db.list('/users/'+ this.getId());
+    items.remove();
+    items.push({ "isScanner" : isScanner });
+  }
+    
+  }

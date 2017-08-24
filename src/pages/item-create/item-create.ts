@@ -22,7 +22,8 @@ export class ItemCreatePage {
     this.form = formBuilder.group({
       profilePic: [''],
       name: ['', Validators.required],
-      about: ['']
+      about: [''],
+      stay_in_touch: ['']
     });
 
     // Watch the form for changes, and
@@ -78,6 +79,7 @@ export class ItemCreatePage {
    * back to the presenter.
    */
   done() {
+    // todo: send all the details to the db??
     if (!this.form.valid) { return; }
     this.viewCtrl.dismiss(this.form.value);
   }

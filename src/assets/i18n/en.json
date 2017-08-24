@@ -56,6 +56,10 @@
 
   "ITEM_NAME_PLACEHOLDER" : "Name",
   "ITEM_ABOUT_PLACEHOLDER" : "About",
+  "DOG_REPORT_STAY_IN_TOUCH" : "Stay in touch",
+  "DOG_REPORT_STAY_CHECKBOX" : "Stay",
+  "DOG_REPORT_DOG_RETURN" : "Return to owners",
+  
 
   "DONE_BUTTON" : "Done",
   "CANCEL_BUTTON" : "Cancel",

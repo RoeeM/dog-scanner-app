@@ -7,20 +7,24 @@
 <ion-content>
 
   <!-- <h1 *ngIf="this.user.getPoints()===5">hhh</h1> -->
+  <ion-item>
+    <ion-avatar item-start>
+      <img [src]="this.user.getPhoto()" />
+    </ion-avatar>
+    <div text-center>
+        <h2>{{this.user.getName()}}</h2>
+        <label>{{this.user.getPoints()}}</label>
+        <ion-icon style="color:yellow;" name="medal"></ion-icon>
+    </div>
+  </ion-item>
 
-  <h2 text-center>Welcome {{this.user.getName()}}</h2>
-  <div text-center>
-      <label>you have {{this.user.getPoints()}} points</label>
-      <ion-icon name="medal"></ion-icon>
-  </div>
-
-  <!-- make it appear only when user asked something -->
+  <!-- make it appear only when user asked something 
   <p>דיווח נוכחי</p>
   <ion-buttons>
     <a class="bbb">search for sorek</a>
     <button class="bbb" ion-button>i am leaving</button>
-    <!-- <button class="bbb" ion-button>contact</button> -->
-  </ion-buttons>
+    <button class="bbb" ion-button>contact</button>
+  </ion-buttons>-->
 
   <ion-row style="position:fixed; bottom:10%; right: 15%; left: 15%;">
       <ion-col text-center>

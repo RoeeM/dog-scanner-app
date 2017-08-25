@@ -44,6 +44,12 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { Facebook } from '@ionic-native/facebook';
 import { SenddogreportProvider } from '../providers/senddogreport/senddogreport';
 
+import { ApplicationRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { AgmCoreModule } from '@agm/core';
+
 export const firebaseConfig = {
   apiKey: "AIzaSyCGDDqlYe7brOhpkCIBEAgULa9YWZQRrIY",
   authDomain: "dog-finder-33da2.firebaseapp.com",
@@ -107,7 +113,10 @@ export function provideSettings(storage: Storage) {
       }
     }),
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCpvo9-AgsNEf-Ns3dYGI1QilbuSa4fPF4'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -32,4 +32,11 @@ export class SenddogreportProvider {
     return 1;
   }
 
+  public rcv_dog_reports() {
+    const relative_firebase_db = this.db.list('/dogreports');
+    return relative_firebase_db;
+    //relative_firebase_db.push({report});
+    //return 1;
+  }
+
 }

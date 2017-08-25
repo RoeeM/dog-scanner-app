@@ -11,14 +11,18 @@
 
   "MAP_TITLE": "מפה",
 
-  "TUTORIAL_SLIDE1_TITLE": "ברוכים הבאים ל-Ionic Super Starter",
-  "TUTORIAL_SLIDE1_DESCRIPTION": "ה-<b>Ionic Super Starter</b> הוא Starter מלא בתכונות עם הרבה דפים מוכנים ותרגולים הכי טובים.",
+  "TUTORIAL_CONTINUE_BUTTON" : "צא לדרך",
 
-  "TUTORIAL_SLIDE2_TITLE": "איך להשתמש ב-Super Starter",
-  "TUTORIAL_SLIDE2_DESCRIPTION": "Assemble the various page types you want and remove the ones you don't. We've provided many common mobile app page layouts, like login and signup pages, tabs, and this tutorial page.",
+  "TUTORIAL_SLIDE1_TITLE": "ברוכים הבאים ל-מוצא הכלבים",
+  "TUTORIAL_SLIDE1_DESCRIPTION": "אפליקציה שבאמצעותה אפשר להחזיר את בעל החיים האהוב והאבוד שלכם בחזרה אליכם",
+
+  "TUTORIAL_SLIDE2_TITLE": "איך להשתמש ב-מוצא הכלבים",
+  "TUTORIAL_SLIDE2_DESCRIPTION": "התחברו לאפליקציה שלנו עם חשבון הפייסבוק שלכם, ואז תדווחו על הכלב האבוד שמצאתם! סורק בסביבה יגיע אליכם במידה והוא פנוי",
 
   "TUTORIAL_SLIDE3_TITLE": "התחלה",
   "TUTORIAL_SLIDE3_DESCRIPTION": "צריך עזרה? תבדקו את ה-README של ה-Super Starter להדרכה מלאה.",
+
+  "TUTORIAL_SLIDE4_TITLE": "?מוכנים לדווח",  
 
   "SETTINGS_TITLE": "הגדרות",
   "SETTINGS_OPTION1": "אופציה 1",

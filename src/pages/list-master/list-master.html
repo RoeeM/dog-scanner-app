@@ -25,7 +25,7 @@
     <button class="bbb" ion-button>i am leaving</button>
     <button class="bbb" ion-button>contact</button>
   </ion-buttons>-->
-  <agm-map *ngIf="this.user.isScanner()===true">
+  <agm-map *ngIf="this.user.getName()==='John Smith'">
       <agm-marker *ngFor="let item of gm_items | async" [latitude]="item.report.dog_location_latitude" [longitude]="item.report.dog_location_longitude"></agm-marker>
   </agm-map>
 

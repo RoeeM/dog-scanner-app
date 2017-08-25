@@ -1,3 +1,4 @@
+import { NotifProvider } from './../providers/notif/notif';
 import { DogserviceProvider } from './../providers/dogservice/dogservice';
 import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav, Config } from 'ionic-angular';
@@ -82,7 +83,7 @@ export class MyApp {
   }
 
   constructor(private translate: TranslateService, private platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen,
-     private dog: DogserviceProvider, private alertCtrl: AlertController) {
+     private dog: DogserviceProvider, private alertCtrl: AlertController, private notif: NotifProvider) {
     this.initTranslate();
   }
 
@@ -93,6 +94,7 @@ export class MyApp {
       this.dog_service.bind(this);
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.notif.start();
     });
   }
 

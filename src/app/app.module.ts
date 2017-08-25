@@ -32,11 +32,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Geolocation } from '@ionic-native/geolocation';
 import { BackgroundMode } from '@ionic-native/background-mode';
+import { Push } from '@ionic-native/push';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { GpsproviderProvider } from '../providers/gpsprovider/gpsprovider';
 import { DogserviceProvider } from '../providers/dogservice/dogservice';
+import { NotifProvider } from '../providers/notif/notif';
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -122,7 +124,9 @@ export function provideSettings(storage: Storage) {
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     GpsproviderProvider,
     BackgroundMode,
-    DogserviceProvider
+    DogserviceProvider,
+    Push,
+    NotifProvider
   ]
 })
 export class AppModule { }

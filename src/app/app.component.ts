@@ -1,3 +1,4 @@
+import { DogserviceProvider } from './../providers/dogservice/dogservice';
 import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav, Config } from 'ionic-angular';
 
@@ -21,6 +22,8 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { Settings } from '../providers/providers';
 
 import { TranslateService } from '@ngx-translate/core'
+
+import { AlertController } from 'ionic-angular';
 
 @Component({
   template: `<ion-menu [content]="content">
@@ -61,7 +64,25 @@ export class MyApp {
     { title: 'Search', component: SearchPage }
   ]
 
-  constructor(private translate: TranslateService, private platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
+  presentAlert(tit, sub) {
+    let alert = this.alertCtrl.create({
+      title: tit,
+      subTitle: sub,
+      buttons: ['Dismiss']
+    });
+    alert.present();
+  }
+
+  dog_service() {
+    this.dog.startService();
+    this.dog.register(function () {
+      console.log('!!!service!!!: 10 second');
+      this.presentAlert('!!!service!!!', '10 second');
+    }.bind(this));
+  }
+
+  constructor(private translate: TranslateService, private platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen,
+     private dog: DogserviceProvider, private alertCtrl: AlertController) {
     this.initTranslate();
   }
 
@@ -69,6 +90,7 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
+      this.dog_service.bind(this);
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });

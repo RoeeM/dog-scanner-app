@@ -31,10 +31,12 @@ import { GoogleMaps } from '@ionic-native/google-maps';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Geolocation } from '@ionic-native/geolocation';
+import { BackgroundMode } from '@ionic-native/background-mode';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { GpsproviderProvider } from '../providers/gpsprovider/gpsprovider';
+import { DogserviceProvider } from '../providers/dogservice/dogservice';
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -118,7 +120,9 @@ export function provideSettings(storage: Storage) {
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    GpsproviderProvider
+    GpsproviderProvider,
+    BackgroundMode,
+    DogserviceProvider
   ]
 })
 export class AppModule { }

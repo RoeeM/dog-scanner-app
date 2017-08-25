@@ -42,6 +42,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { Facebook } from '@ionic-native/facebook';
+import { SenddogreportProvider } from '../providers/senddogreport/senddogreport';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCGDDqlYe7brOhpkCIBEAgULa9YWZQRrIY",
@@ -140,6 +141,7 @@ export function provideSettings(storage: Storage) {
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler },
+    SenddogreportProvider,
   ]
 })
 export class AppModule { }

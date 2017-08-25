@@ -8,7 +8,7 @@
   "LOGIN": "Sign in",
   "SIGNUP": "Sign up",
 
-  "TAB1_TITLE": "Items",
+  "TAB1_TITLE": "Home",
   "TAB2_TITLE": "Search",
   "TAB3_TITLE": "Settings",
 
@@ -17,10 +17,10 @@
   "TUTORIAL_SKIP_BUTTON" : "Skip",
   "TUTORIAL_CONTINUE_BUTTON" : "Continue",
 
-  "TUTORIAL_SLIDE1_TITLE": "Welcome to the Dog Finder!",
-  "TUTORIAL_SLIDE1_DESCRIPTION": "The <b>Dog Finder</b> is an app that can bring back your favorite pet home.",
+  "TUTORIAL_SLIDE1_TITLE": "Welcome to DogBack!",
+  "TUTORIAL_SLIDE1_DESCRIPTION": "<b>DogBack</b> is an app that can bring back your favorite pet home.",
 
-  "TUTORIAL_SLIDE2_TITLE": "How to use the Dog Finder",
+  "TUTORIAL_SLIDE2_TITLE": "How to use DogBack",
   "TUTORIAL_SLIDE2_DESCRIPTION": "easily sign in our app with your facebook account, then report about the dog you have found! scanner will arrive to your location when he will be available",
 
   "TUTORIAL_SLIDE3_TITLE": "Getting Started",
@@ -28,7 +28,7 @@
 
   "TUTORIAL_SLIDE4_TITLE": "Ready to report?",
 
-  "WELCOME_INTRO" : "Your expirience with Dog Finder starts here",
+  "WELCOME_INTRO" : "Your expirience with DogBack starts here",
 
   "SETTINGS_TITLE": "Settings",
   "SETTINGS_OPTION1": "Option 1",

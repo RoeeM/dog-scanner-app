@@ -1,6 +1,6 @@
 <ion-header style="background-color:#0054FF">
   <div style="color:white">
-    <h2 text-center>Dog Finder</h2>
+    <h2 text-center>DogBack</h2>
   </div>
 </ion-header>
 
@@ -14,7 +14,7 @@
     <div text-center>
         <h2>{{this.user.getName()}}</h2>
         <label>{{this.user.getPoints()}}</label>
-        <ion-icon style="color:yellow;" name="medal"></ion-icon>
+        <ion-icon style="color:gold;" name="medal"></ion-icon>
     </div>
   </ion-item>
 
@@ -25,9 +25,8 @@
     <button class="bbb" ion-button>i am leaving</button>
     <button class="bbb" ion-button>contact</button>
   </ion-buttons>-->
-  <agm-map>
+  <agm-map *ngIf="this.user.isScanner()===true">
       <agm-marker *ngFor="let item of gm_items | async" [latitude]="item.report.dog_location_latitude" [longitude]="item.report.dog_location_longitude"></agm-marker>
-    <!-- </li> -->
   </agm-map>
 
     

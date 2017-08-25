@@ -68,8 +68,9 @@ export class User {
   }
 
   isScanner(){
-    const items = this.db.list('/users/scanner/'+this.getId());
-    return items[0]["isScanner"];
+    return true;
+    // const items = this.db.list('/users/scanner/'+this.getId());
+    // return items[0]["isScanner"];
   }
 
   setScanner(isScanner){

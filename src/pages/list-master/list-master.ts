@@ -9,6 +9,11 @@ import { Items } from '../../providers/providers';
 import { Item } from '../../models/item';
 
 import { User } from '../../providers/providers';
+
+import { DogReport } from '../../models/dogreport';
+import * as firebase from 'firebase/app';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+
 import {
   GoogleMaps,
   GoogleMap,
@@ -26,15 +31,16 @@ import {
 export class ListMasterPage {
   currentItems: Item[];
   position: CameraPosition;
-  public lat: any = 51.678418;
-  public lng: any = 7.809007;
+  // public lat: any = 51.678418;
+  // public lng: any = 7.809007;
+  public gm_items: FirebaseListObservable<any>;
 
   @ViewChild('map') map;
 
   constructor(public navCtrl: NavController, public items: Items, public modalCtrl: ModalController,
-     public user: User, private googleMaps: GoogleMaps) {
+     public user: User, private googleMaps: GoogleMaps, public db: AngularFireDatabase) {
     this.currentItems = this.items.query();
-
+      this.gm_items = this.db.list('/dogreports');
   }
 
   /**

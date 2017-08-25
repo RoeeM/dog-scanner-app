@@ -1,4 +1,3 @@
-<!-- todo: get user + points from db -->
 <ion-header style="background-color:#0054FF">
   <div style="color:white">
     <h2 text-center>Dog Finder</h2>
@@ -7,17 +6,20 @@
 
 <ion-content>
 
-  <h2 text-center>Welcome Gal Hirshman</h2>
+  <!-- <h1 *ngIf="this.user.getPoints()===5">hhh</h1> -->
+
+  <h2 text-center>Welcome {{this.user.getName()}}</h2>
   <div text-center>
-      <label>you have 10 points</label>
+      <label>you have {{this.user.getPoints()}} points</label>
       <ion-icon name="medal"></ion-icon>
   </div>
 
+  <!-- make it appear only when user asked something -->
   <p>דיווח נוכחי</p>
   <ion-buttons>
     <a class="bbb">search for sorek</a>
     <button class="bbb" ion-button>i am leaving</button>
-    <button class="bbb" ion-button>contact</button>
+    <!-- <button class="bbb" ion-button>contact</button> -->
   </ion-buttons>
 
   <ion-row style="position:fixed; bottom:10%; right: 15%; left: 15%;">

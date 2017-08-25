@@ -86,10 +86,11 @@ export class User {
     
   }
   getPoints(){
-    const items = this.db.list('/users/points/'+this.getId());
-    if (!items) {
-      return 0;
-    }
-    return items[0]["points"];
+    return 5;
+    
+   // if (!items) {
+    //  return 0;
+   // }
+   // return items[0]["points"];
   }
 }

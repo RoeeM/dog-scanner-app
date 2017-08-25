@@ -15,13 +15,22 @@
   </div>
 
   <!-- make it appear only when user asked something -->
-  <p>דיווח נוכחי</p>
-  <ion-buttons>
-    <a class="bbb">search for sorek</a>
-    <button class="bbb" ion-button>i am leaving</button>
+  <!-- <p>דיווח נוכחי</p> -->
+  <!-- <ion-buttons> -->
+    <!-- <a class="bbb">search for sorek</a> -->
+    <!-- <button class="bbb" ion-button>i am leaving</button> -->
     <!-- <button class="bbb" ion-button>contact</button> -->
-  </ion-buttons>
+  <!-- </ion-buttons> -->
+  <!-- 
+  <ion-content>
+    <div #map id="map" style="height:60%;"></div>
+  </ion-content>
+  -->
+  <agm-map [latitude]="lat" [longitude]="lng">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
 
+    
   <ion-row style="position:fixed; bottom:10%; right: 15%; left: 15%;">
       <ion-col text-center>
         <button class="dog_report" ion-button color="danger" round (click)="addItem()">{{ 'LIST_MASTER_TITLE' | translate }}</button>
